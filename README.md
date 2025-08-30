@@ -85,43 +85,50 @@ Endpoints expose /health and /version for post-deploy checks.
 | Slowest queries               | SELECT query, calls, round(mean_exec_time,2) ms FROM pg_stat_statements ORDER BY mean_exec_time DESC LIMIT 10;                                           | mean_exec_time < 50ms (OLTP)    |
 | Chunk fetch query efficiency  | EXPLAIN (ANALYZE, BUFFERS) SELECT id, work_id, text FROM chunks WHERE embedded = FALSE ORDER BY created_at LIMIT 1000;                                   | Execution time < 50ms, mostly hits |
 
-## SharePoint Online Security Integration (Nov 2025 – Jan 2026)
-This is a challenging phase. Ideally I hope to update Qdrant/PostgreSQL permissions within 5s of SharePoint changes. One possible mechanism is event-driven sync via Graph change notifications (Graph → Event Grid → Lambda → RAG System).
+## SharePoint Online security integration (Nov 2025 – Jan 2026)
 
-I need to implement end-to-end permission flow with:
-- RBAC Integration: Map Azure AD groups to Qdrant/PostgreSQL document-level access controls. Use OpenPolicyAgent or custom logic to enforce read/no-access per user/group.
-- MinIO Hardening:
-  - TLS via certbot for all MinIO endpoints (internal + external).
-  - Bucket policies scoped to RBAC roles (e.g., s3:GetObject only for users with SharePoint read ACLs).
-  - Server-side encryption (SSE-S3) for stored PDFs.
+Goal: propagate SharePoint permission changes to search results within ~5 seconds, end-to-end. The system must enforce access at every layer (API, vector search, and object storage) without adding noticeable latency.
 
-Here’s my current thinking about this implementation from a user perspective (assuming I've already figured out the permissions sync challenge).
+### Architecture sketch
 
-Auth: Maria logs in, and her Azure AD groups (e.g., Staff_RW) are embedded in a signed JWT.
+- Source of truth
+  - SharePoint site/file ACLs and Azure AD groups/roles (via Microsoft Graph).
+- Event-driven sync (push, not pull)
+  - Graph change notifications → Event Grid → Azure Function → AuthZ `/acl/update`.
+  - AuthZ normalises ACL deltas, updates its Redis cache, and persists a compact audit trail.
+- Authorisation boundary
+  - A C#/.NET AuthZ microservice validates JWTs, resolves group membership, evaluates policies (RBAC/ABAC), and returns either a Permit/Deny or a Qdrant-ready filter.
+- Retrieval enforcement
+  - Points in Qdrant are tagged at index time (e.g. `allowed_groups`, `doc_id`, `tenant_id`, optional `doc_acl_hash`).
+  - Retrieval service applies the filter returned by AuthZ; results are authorised by construction.
+- Object storage enforcement (defence in depth)
+  - MinIO hardened with TLS, SSE-S3, and bucket policies.
+  - Blob access via short-lived pre-signed URLs issued only after an `AuthZ /authorize/object` Permit.
 
-Enforcement: The RAG system checks these groups against document ACLs in PostgreSQL, then filters Qdrant results to only documents she’s allowed to see.
+### User-centric flow
 
-Guarantee: Even if "salaries" matches restricted Management docs, the system excludes them—security is enforced at every layer (API, DB, and vector search).
+Auth: Maria signs in; her Azure AD groups (e.g. `Staff_RW`) are in the JWT.
 
-This ensures Maria never accesses unauthorised data, while maintaining low-latency retrieval. A key part of this work will be automated testing to ensure the integrity of the mechanism. 
+Enforcement: FastAPI asks AuthZ *“what is Maria allowed to see for this query?”* AuthZ returns a decision and a filter; FastAPI forwards the filter to Qdrant. Even if the term “salaries” hits restricted documents, those points are excluded by the filter.
+
+### Sequence  
 
 ```mermaid
 sequenceDiagram
     participant Maria
     participant AzureAD
     participant FastAPI
-    participant PostgreSQL
+    participant AuthZ
     participant Qdrant
-    Maria->>AzureAD: 1. Login (OAuth2)
-    AzureAD->>Maria: 2. JWT (contains groups: ["Staff_RW"])
-    Maria->>FastAPI: 3. GET /query?q=salaries (Auth: Bearer JWT)
-    FastAPI->>AzureAD: 4. Introspect token
-    AzureAD-->>FastAPI: 5. Valid (groups: ["Staff_RW"])
-    FastAPI->>PostgreSQL: 6. Get doc ACLs WHERE groups ∩ ["Staff_RW"]
-    PostgreSQL-->>FastAPI: 7. {allowed_doc_ids: ["doc123"]}
-    FastAPI->>Qdrant: 8. Search(query="salaries", filter=doc_id ∈ ["doc123"])
-    Qdrant-->>FastAPI: 9. Results (only Staff docs)
-    FastAPI-->>Maria: 10. 200 OK (filtered results)
+
+    Maria->>AzureAD: 1) Login (OAuth2)
+    AzureAD-->>Maria: 2) JWT (groups: ["Staff_RW"])
+    Maria->>FastAPI: 3) GET /query?q=salaries (Bearer JWT)
+    FastAPI->>AuthZ: 4) POST /authorize/search (JWT, action=read)
+    AuthZ-->>FastAPI: 5) { decision: Permit, filter: doc/group predicate, reasons: [...] }
+    FastAPI->>Qdrant: 6) search(query="salaries", filter=AuthZ.filter)
+    Qdrant-->>FastAPI: 7) results (authorised only)
+    FastAPI-->>Maria: 8) 200 OK (filtered results)
 ```
 
 ## RAG CLI — Knowledge Repository Manager
