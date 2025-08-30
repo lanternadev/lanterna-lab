@@ -19,14 +19,14 @@ When a question is asked, it too is converted into embeddings. The system matche
 The lab ingests AI research papers from SharePoint, OpenAlex, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented reasoning. Each week new papers are added.
 
 ## Current ingestion and embedding status
-- PDFs in object storage: 105688  
-- JSON metadata in PostgreSQL: 105688  
-- Distinct chunked papers: 105688  
-- Papers with any chunk embedded: 17524  
-- Fully embedded papers: 17523  
-- Any-embed progress: 17524/105688 (16.58%)  
-- Full-embed progress: 17523/105688 (16.58%)  
-  21 August 2025 03:28:41
+- PDFs in MinIO object storage: 112660  
+- JSON metadata in PostgreSQL: 112660  
+- Distinct chunked papers: 112660  
+- Papers with any chunk embedded: 41170  
+- Fully embedded papers (ALL chunks): 41170
+- Any-embed progress: 41170/112660 (36.54%) — Remaining (any): 71490
+- Full-embed progress: 41170/112660 (36.54%) — Remaining (full): 71490
+  30 August 2025 15:38:21
 
 ## Project structure
 
