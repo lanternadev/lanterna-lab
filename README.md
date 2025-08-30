@@ -74,12 +74,6 @@ A branch-based promotion pipeline is in place with two environments per service,
 
 Endpoints expose /health and /version for post-deploy checks.
 
-## Performance and tuning
-
-Currently running entirely on CPU. While that imposes limits, it provides an opportunity to learn performance tuning and monitoring.
-
-Exploration includes PostgreSQL metrics such as cache hit ratios, table/index hotspots, slow query logs, and chunk fetch efficiency.
-
 ## AuthZ service for Azure AD and SharePoint (Nov 2025 – Jan 2026)
 
 A lightweight authorization microservice written in C#/.NET 8. It evaluates whether a given user can perform an action on a resource, using Azure AD groups/roles and SharePoint ACLs as sources of truth.
