@@ -74,11 +74,55 @@ A branch-based promotion pipeline is in place with two environments per service,
 
 Endpoints expose /health and /version for post-deploy checks.
 
-## AuthZ service for Azure AD and SharePoint (Nov 2025 – Jan 2026)
+## PostgreSQL Health Check Summary
 
-A lightweight authorization microservice written in C#/.NET 8. It evaluates whether a given user can perform an action on a resource, using Azure AD groups/roles and SharePoint ACLs as sources of truth.
+| Check                        | Command (psql)                                                                                                                                          | Healthy Target                  |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
+| Global cache hit ratio        | SELECT round(sum(blks_hit)*100/nullif(sum(blks_hit)+sum(blks_read),0),2) FROM pg_stat_database;                                                         | > 95%                           |
+| Per-database cache ratio      | SELECT datname, round(blks_hit*100.0/nullif(blks_hit+blks_read,0),2) FROM pg_stat_database ORDER BY blks_read DESC;                                      | > 95% for main DB               |
+| Table-level IO hot spots      | SELECT relname, heap_blks_read, heap_blks_hit, round(heap_blks_hit*100.0/nullif(heap_blks_read+heap_blks_hit,0),2) AS hit_pct FROM pg_statio_user_tables ORDER BY heap_blks_read DESC LIMIT 15; | hit_pct > 95%, low reads        |
+| Index-level IO hot spots      | SELECT relname, indexrelname, idx_blks_read, idx_blks_hit, round(idx_blks_hit*100.0/nullif(idx_blks_hit+idx_blks_read,0),2) AS hit_pct FROM pg_statio_user_indexes ORDER BY idx_blks_read DESC LIMIT 15; | hit_pct > 95%, low reads        |
+| Slowest queries               | SELECT query, calls, round(mean_exec_time,2) ms FROM pg_stat_statements ORDER BY mean_exec_time DESC LIMIT 10;                                           | mean_exec_time < 50ms (OLTP)    |
+| Chunk fetch query efficiency  | EXPLAIN (ANALYZE, BUFFERS) SELECT id, work_id, text FROM chunks WHERE embedded = FALSE ORDER BY created_at LIMIT 1000;                                   | Execution time < 50ms, mostly hits |
 
-Python services call the AuthZ API to obtain permit/deny decisions and Qdrant filters.
+## SharePoint Online Security Integration (Nov 2025 – Jan 2026)
+This is a challenging phase. Ideally I hope to update Qdrant/PostgreSQL permissions within 5s of SharePoint changes. One possible mechanism is event-driven sync via Graph change notifications (Graph → Event Grid → Lambda → RAG System).
+
+I need to implement end-to-end permission flow with:
+- RBAC Integration: Map Azure AD groups to Qdrant/PostgreSQL document-level access controls. Use OpenPolicyAgent or custom logic to enforce read/no-access per user/group.
+- MinIO Hardening:
+  - TLS via certbot for all MinIO endpoints (internal + external).
+  - Bucket policies scoped to RBAC roles (e.g., s3:GetObject only for users with SharePoint read ACLs).
+  - Server-side encryption (SSE-S3) for stored PDFs.
+
+Here’s my current thinking about this implementation from a user perspective (assuming I've already figured out the permissions sync challenge).
+
+Auth: Maria logs in, and her Azure AD groups (e.g., Staff_RW) are embedded in a signed JWT.
+
+Enforcement: The RAG system checks these groups against document ACLs in PostgreSQL, then filters Qdrant results to only documents she’s allowed to see.
+
+Guarantee: Even if "salaries" matches restricted Management docs, the system excludes them—security is enforced at every layer (API, DB, and vector search).
+
+This ensures Maria never accesses unauthorised data, while maintaining low-latency retrieval. A key part of this work will be automated testing to ensure the integrity of the mechanism. 
+
+```mermaid
+sequenceDiagram
+    participant Maria
+    participant AzureAD
+    participant FastAPI
+    participant PostgreSQL
+    participant Qdrant
+    Maria->>AzureAD: 1. Login (OAuth2)
+    AzureAD->>Maria: 2. JWT (contains groups: ["Staff_RW"])
+    Maria->>FastAPI: 3. GET /query?q=salaries (Auth: Bearer JWT)
+    FastAPI->>AzureAD: 4. Introspect token
+    AzureAD-->>FastAPI: 5. Valid (groups: ["Staff_RW"])
+    FastAPI->>PostgreSQL: 6. Get doc ACLs WHERE groups ∩ ["Staff_RW"]
+    PostgreSQL-->>FastAPI: 7. {allowed_doc_ids: ["doc123"]}
+    FastAPI->>Qdrant: 8. Search(query="salaries", filter=doc_id ∈ ["doc123"])
+    Qdrant-->>FastAPI: 9. Results (only Staff docs)
+    FastAPI-->>Maria: 10. 200 OK (filtered results)
+```
 
 ## RAG CLI — Knowledge Repository Manager
 
