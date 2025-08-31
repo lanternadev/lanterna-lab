@@ -69,7 +69,8 @@ This **1:1 mapping** enforces clear separation of concerns and makes it easy to 
 Hosted on a Minisforum UM890 Pro running Proxmox  
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
-- 2 TB NVMe  
+- 2 TB NVMe
+
 The lab operates in three modes — general usage, embedding, and fine-tuning — to optimise use of limited hardware resources.
 
 ## CI/CD overview
