@@ -26,6 +26,7 @@ The lab ingests AI research papers from SharePoint, OpenAlex, and other sources.
 - Fully embedded papers (ALL chunks): 41170
 - Any-embed progress: 41170/112660 (36.54%) — Remaining (any): 71490
 - Full-embed progress: 41170/112660 (36.54%) — Remaining (full): 71490
+- 
   30 August 2025 15:38:21
 
 ## Project Structure  
