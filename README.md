@@ -12,9 +12,10 @@ When a question is asked, it too is converted into embeddings. The system matche
 
 ## Project goals
 1. Hands-on learning: Build a non-trivial Linux software project, gaining practical experience with Python, Bash, GitHub, monitoring, and related tooling.
-2. Deep dive into RAG and AI: Explore the architecture, components, and best practices of retrieval-augmented generation systems.
+2. Deep dive into RAG and AI: Explore the architecture, components, best practices, and evaluation of retrieval-augmented generation systems.
 3. User experience and prompt engineering: Design intuitive interfaces and effective, measurable prompts.
-4. Practical research assistant: Maintain a weekly-updated repository of the latest AI research, enriched through the RAG pipeline and queried via LLMs.
+4. Tuning and re-ranking: Train and evaluate lightweight ML models (e.g. cross-encoders, rerankers) to improve retrieval quality and prepare for GPU-accelerated fine-tuning.
+5. Practical research assistant: Maintain a weekly-updated repository of the latest AI research, enriched through the RAG pipeline and queried via LLMs.
 
 The lab ingests AI research papers from SharePoint, OpenAlex, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented reasoning. Each week new papers are added.
 
@@ -69,6 +70,7 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
 - 2 TB NVMe  
+The lab operates in three modes — general usage, embedding, and fine-tuning — to optimise use of limited hardware resources.
 
 ## CI/CD overview
 
