@@ -42,7 +42,7 @@ Each functional stage of the pipeline has its own folder in the repository and i
 | Retrieval     | lab-1-retrieval01| Retrieval microservice and orchestration                                     |
 | Storage       | lab-1-storage01  | Object storage                                                               |
 | Monitoring    | lab-1-monitoring01| Monitoring and logging (Prometheus, Grafana, Elasticsearch, etc.)           |
-| Model         | lab-1-model01    | Training, fine-tuning, reranking, and evaluation experiments                |
+| Tuning        | lab-1-tuning01    | Training, fine-tuning, reranking, and evaluation experiments                |
 
 ## Project timeline (2025–2027)
 
