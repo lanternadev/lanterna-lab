@@ -38,15 +38,16 @@ This **1:1 mapping** enforces clear separation of concerns and makes it easy to 
 
 | Repo Folder | VM Name            | Description                                                                 |
 |-------------|--------------------|-----------------------------------------------------------------------------|
-| [Management](https://github.com/lanternadev/rag-lab/tree/main/Management) | lab-1-mgmt01       | Management & orchestration (Terraform, Ansible, backups)                    |
-| [Database](https://github.com/lanternadev/rag-lab/tree/main/Database)     | lab-1-db01         | Metadata (PostgreSQL) + Vector DB (Qdrant)                                  |
-| [Embed](https://github.com/lanternadev/rag-lab/tree/main/Embed)           | lab-1-embed01      | Embedding Service (currently: nomic-embed-text-v1)                          |
-| [Ingestion](https://github.com/lanternadev/rag-lab/tree/main/Ingestion)   | lab-1-ingestion01  | Data ingestion (SharePoint + OpenAlex pipelines)                            |
-| [UI](https://github.com/lanternadev/rag-lab/tree/main/UI)                 | lab-1-ui01         | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)                 |
-| [Retrieval](https://github.com/lanternadev/rag-lab/tree/main/Retrieval)   | lab-1-retrieval01  | FastAPI retrieval microservice + LangChain orchestration                    |
-| [Storage](https://github.com/lanternadev/rag-lab/tree/main/Storage)       | lab-1-storage01    | Object storage (MinIO)                                                      |
-| [Monitoring](https://github.com/lanternadev/rag-lab/tree/main/Monitoring) | lab-1-monitoring01 | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
-| [Model](https://github.com/lanternadev/rag-lab/tree/main/Model)           | lab-1-model01      | Training, fine-tuning, reranking, and evaluation experiments                |
+| Management | lab-1-mgmt01       | Management & orchestration (Terraform, Ansible, backups)                    |
+| Database    | lab-1-db01         | Metadata (PostgreSQL) + Vector DB (Qdrant)                                  |
+| Embed         | lab-1-embed01      | Embedding Service (currently: nomic-embed-text-v1)                          |
+| Ingestion  | lab-1-ingestion01  | Data ingestion (SharePoint + OpenAlex pipelines)                            |
+| UI               | lab-1-ui01         | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)                 |
+| Retrieval  | lab-1-retrieval01  | FastAPI retrieval microservice + LangChain orchestration                    |
+| Storage     | lab-1-storage01    | Object storage (MinIO)                                                      |
+| Monitoring | lab-1-monitoring01 | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
+| Tuning         | lab-1-tuning01      | Training, fine-tuning, reranking, and evaluation experiments                |
+| Reranker         | lab-1-reranker01      | Re-ranking model & API               |
 
 ## Project timeline (2025–2027)
 
