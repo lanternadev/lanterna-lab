@@ -1,6 +1,6 @@
 # Homelab Retrieval-Augmented Generation (RAG)
 
-A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query around 100,000 artificial intelligence research papers.
+A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query enterprise-scale corpora — over 100,000 research papers today, with new content added weekly.
 
 👉 **Note**: This repo is a **shop window**.  
 The actual working codebase is private, as this is first and foremost a *learning tool*. When components are production-ready, they’ll be released here or as separate open-source modules.
