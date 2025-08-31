@@ -3,8 +3,7 @@
 A Retrieval-Augmented Generation (RAG) system designed to ingest, embed, and query around 100,000 artificial intelligence research papers.
 
 👉 **Note**: This repo is a **shop window**.  
-The actual working codebase is private, as this is first and foremost a *learning tool*.  
-When components are production-ready, they’ll be released here or as separate open-source modules.
+The actual working codebase is private, as this is first and foremost a *learning tool*. When components are production-ready, they’ll be released here or as separate open-source modules.
 
 Retrieval-Augmented Generation (RAG) systems ground a large language model's responses in a specific, authoritative knowledge base. This system has consumed over 100,000 AI research papers. Each paper is broken into smaller sections ("chunks") and each of these is processed into an embedding, a mathematical representation that makes it possible to compare concepts and ideas rather than just matching keywords.
 
