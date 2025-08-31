@@ -47,7 +47,7 @@ This **1:1 mapping** enforces clear separation of concerns and makes it easy to 
 | Storage     | lab-1-storage01    | Object storage (MinIO)                                                      |
 | Monitoring | lab-1-monitoring01 | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
 | Tuning    | lab-1-tuning01    | Experimental VM for training and fine-tuning models, evaluation workflows, and ML prototyping |
-| Reranker  | lab-1-reranker01  | PyTorch-based re-ranking model and API microservice for rescoring Qdrant results |
+| Reranker  | lab-1-reranker01  | PyTorch-based re-ranking model. Dedicated microservice for re-ranking retrieved results using cross-encoder models (e.g., DistilBERT, monoT5) to improve answer relevance. |
 
 ## Project timeline (2025–2027)
 
