@@ -18,6 +18,30 @@ When a question is asked, it too is converted into embeddings. The system matche
 5. Practical research assistant: Maintain a weekly-updated repository of the latest AI research, enriched through the RAG pipeline and queried via LLMs.
 
 The lab ingests AI research papers from SharePoint, OpenAlex, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented reasoning. Each week new papers are added.
+## Current Status: 31 August 2025  
+
+**Version 0.1**  
+The core system is up and running. It’s currently embedding 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant, with ingestion, storage, and retrieval services fully wired together.  
+
+This milestone closes a two-month sprint focused on plumbing and reliability: ingestion pipelines, CI/CD, monitoring, and a first working UI.  
+
+Next phases will build on this base with re-ranking, SharePoint ACL integration, and evaluation dashboards.
+
+
+## Project timeline (2025–2027)
+
+| Dates           | Project                          | Notes                                                                 |
+|-----------------|----------------------------------|-----------------------------------------------------------------------|
+| Jun – Aug 2025  | Core RAG build                   | Ingestion, storage, retrieval; query LLM in cloud; ~100k docs; basic CLI |
+| Sept – Nov 2025 | Re-ranking microservice      | Build reranker01 VM; implement cross-encoder reranker (DistilBERT and/or monoT5); integrate into retrieval pipeline |
+| Dec 2025 – Jan 2026 | SharePoint security integration | Event-driven sync of ACLs; enforce permissions across Postgres/Qdrant |
+| Feb – Apr 2026  | Kubernetes/Terraform/Ansible     | Containerise and refactor into IaC deployment |
+| May – Jul 2026  | Metrics and golden set           | Golden dataset for retrieval + reranker; build evaluation dashboards |
+| Aug – Oct 2026  | Domain LLM                       | Fine-tune on AI/ML corpora; adapters and workflows |
+| Nov 2026 – Jan 2027 | Prompt engineering and UX        | Layer in advanced user flows, prompt libraries, and UI improvements |
+| Feb – Jun 2027  | Cloud migration                  | Hybrid to cloud-native migration; metric parity maintained |
+| Jul – Dec 2027  | Cloud: land and expand           | Scale out with cloud services, optimisation, managed workloads        |
+
 
 ## Current ingestion and embedding status
 - PDFs in MinIO object storage: 112660  
@@ -51,19 +75,6 @@ This **1:1 mapping** enforces clear separation of concerns and makes it easy to 
 | Tuning    | lab-1-tuning01    | Experimental VM for training and fine-tuning models, evaluation workflows, and ML prototyping |
 | Reranker  | lab-1-reranker01  | PyTorch-based re-ranking model. Dedicated microservice for re-ranking retrieved results using cross-encoder models (e.g., DistilBERT, monoT5) to improve answer relevance. |
 
-## Project timeline (2025–2027)
-
-| Dates           | Project                          | Notes                                                                 |
-|-----------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun – Aug 2025  | Core RAG build                   | Ingestion, storage, retrieval; query LLM in cloud; ~100k docs; basic CLI |
-| Sept – Nov 2025 | Re-ranking microservice      | Build reranker01 VM; implement cross-encoder reranker (DistilBERT and/or monoT5); integrate into retrieval pipeline |
-| Dec 2025 – Jan 2026 | SharePoint security integration | Event-driven sync of ACLs; enforce permissions across Postgres/Qdrant |
-| Feb – Apr 2026  | Kubernetes/Terraform/Ansible     | Containerise and refactor into IaC deployment |
-| May – Jul 2026  | Metrics and golden set           | Golden dataset for retrieval + reranker; build evaluation dashboards |
-| Aug – Oct 2026  | Domain LLM                       | Fine-tune on AI/ML corpora; adapters and workflows |
-| Nov 2026 – Jan 2027 | Prompt engineering and UX        | Layer in advanced user flows, prompt libraries, and UI improvements |
-| Feb – Jun 2027  | Cloud migration                  | Hybrid to cloud-native migration; metric parity maintained |
-| Jul – Dec 2027  | Cloud: land and expand           | Scale out with cloud services, optimisation, managed workloads        |
 ## RAG lab infrastructure
 
 Hosted on a Minisforum UM890 Pro running Proxmox  
