@@ -53,16 +53,15 @@ This **1:1 mapping** enforces clear separation of concerns and makes it easy to 
 
 | Dates           | Project                          | Notes                                                                 |
 |-----------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun – Aug 2025  | Core RAG build                   | Self-hosted ingestion, storage, retrieval; query LLM in cloud; ~100k docs; basic CLI |
-| Sept – Oct 2025 | Prompt engineering and UX        | Design interfaces, prototype user flows, build first prompt libraries |
-| Nov 2025 – Jan 2026 | SharePoint security integration | End-to-end permission flow; SharePoint in cloud, RAG infra on-prem; fast propagation of ACL changes |
-| Feb – Apr 2026  | Kubernetes/Terraform/Ansible     | Containerise and refactor deployment into infrastructure as code form |
-| May – Jul 2026  | Metrics and golden set           | Dashboards, golden dataset evaluation; retrieval metrics (Precision@k, Recall@k, MRR@k) |
-| Aug – Oct 2026  | Domain LLM                       | Fine-tune on AI/ML corpora; adapters and workflows                    |
-| Nov 2026 – Jan 2027 | Graph retriever and re-ranking | Multi-hop, relationship-aware retrieval; hybrid pipeline              |
-| Feb – Jun 2027  | Cloud migration                  | Hybrid to cloud-native migration; metric parity maintained            |
+| Jun – Aug 2025  | Core RAG build                   | Ingestion, storage, retrieval; query LLM in cloud; ~100k docs; basic CLI |
+| Sept – Nov 2025 | Re-ranking microservice      | Build reranker01 VM; implement cross-encoder reranker (DistilBERT and/or monoT5); integrate into retrieval pipeline |
+| Dec 2025 – Jan 2026 | SharePoint security integration | Event-driven sync of ACLs; enforce permissions across Postgres/Qdrant |
+| Feb – Apr 2026  | Kubernetes/Terraform/Ansible     | Containerise and refactor into IaC deployment |
+| May – Jul 2026  | Metrics and golden set           | Golden dataset for retrieval + reranker; build evaluation dashboards |
+| Aug – Oct 2026  | Domain LLM                       | Fine-tune on AI/ML corpora; adapters and workflows |
+| Nov 2026 – Jan 2027 | Prompt engineering and UX        | Layer in advanced user flows, prompt libraries, and UI improvements |
+| Feb – Jun 2027  | Cloud migration                  | Hybrid to cloud-native migration; metric parity maintained |
 | Jul – Dec 2027  | Cloud: land and expand           | Scale out with cloud services, optimisation, managed workloads        |
-
 ## RAG lab infrastructure
 
 Hosted on a Minisforum UM890 Pro running Proxmox  
