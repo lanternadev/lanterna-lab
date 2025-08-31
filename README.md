@@ -25,7 +25,8 @@ The core system is up and running. It’s currently embedding 112,660 AI researc
 
 This milestone closes a two-month sprint focused on plumbing and reliability: ingestion pipelines, CI/CD, monitoring, and a first working UI.  
 
-Next phases will build on this base with re-ranking, SharePoint ACL integration, and evaluation dashboards.
+Upcoming phases will build on this base with re-ranking, SharePoint ACL integration, and evaluation dashboards.
+**Next up:** bring reranker01 online (PyTorch + cross-encoder) to improve result ordering and lay the groundwork for fine-tuning.  
 
 
 ## Project timeline (2025–2027)
