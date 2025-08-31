@@ -20,7 +20,7 @@ The lab ingests AI research papers from SharePoint, OpenAlex, and other sources.
 ## Current Status: 31 August 2025  
 
 **Version 0.1**  
-The core system is up and running. It’s currently embedding 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant, with ingestion, storage, and retrieval services fully wired together.  
+The core system is up and running. It is currently embedding 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant, with ingestion, storage, and retrieval services fully wired together.  
 
 This milestone closes a two-month sprint focused on plumbing and reliability: ingestion pipelines, CI/CD, monitoring, and a first working UI.  
 
