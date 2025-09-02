@@ -68,7 +68,7 @@ Each functional stage of the pipeline has:
 - a **folder** in the repository (code & configs)  
 - a **dedicated VM** (runtime environment)  
 
-This **1:1 mapping** enforces clear separation of concerns and makes it easy to evolve, test, or swap out stages independently. 
+The lab now spans 11 dedicated VMs, each mapped 1:1 to a functional stage of the system. This separation enforces clear boundaries, makes experimentation safer, and mirrors enterprise design patterns.
 
 | Repo Folder | VM Name            | Description                                                                 |
 |-------------|--------------------|-----------------------------------------------------------------------------|
