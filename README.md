@@ -154,43 +154,11 @@ sequenceDiagram
 ```
 ## Disaster Recovery & Continuity
 
-This home lab runs on limited hardware; there is no hot failover. The design aims for simple resilience: fast self-healing for process failures and documented recovery for host failures. The goal is not five-nines uptime, but to learn and demonstrate continuity patterns that would scale in an enterprise context.
+This lab runs on limited hardware; there is no hot failover. The design focuses on **resilience and recoverability**, applying continuity patterns that would scale in an enterprise context.
 
-What Kubernetes covers (work-in-progress)
-- **Self-healing**: liveness/readiness probes, pod restarts, rolling deploys.
-- **Graceful updates**: zero-(ish) downtime rollouts with rollback.
-- **Resource hygiene**: requests/limits to avoid noisy-neighbour crashes; PodDisruptionBudgets for safer restarts.
-
-What it does **not** cover here
-- **Single-host risk**: if the Proxmox node dies, the cluster is down.
-- **GPU scarcity**: training jobs queue; no transparent GPU failover.
-
-Continuity strategy (practical, on this hardware)
-- **Immutable infra**: full rebuild via IaC (Terraform/Ansible/K8s manifests). Target: clean cluster redeploy < 2 hours. (work-in-progress)
-- **Backups**
-  - PostgreSQL: nightly base backup + WAL archiving (pgBackRest/pg_dump + cron) to external storage.
-  - Qdrant: scheduled snapshots of collections (and metadata) off-box.
-  - MinIO: bucket versioning + daily replication/sync to external storage (e.g., NAS or cloud bucket).
-  - **Verification**: automated restore test of each tier weekly (smoke), full end-to-end restore monthly.
-- **Cold standby**: documented procedure to spin up a new node from snapshots; not automated, but rehearsed.
-- **Provenance & audit**: query/result logs centralised; exposure reports possible even after restore.
-- **Secrets management**: encrypted at rest (e.g., SOPS + age or Vault); rotation playbook included.
-- **Degraded modes** (work-in-progress)
-  - If reranker is down → fall back to base vector search.
-  - If embeddings are down → serve from cache; queue new queries for later embed.
-  - If LLM is unreachable → return retrieved citations with “no synthesis” banner.
-
-Targets (lab-scale)
-- **RPO (data loss window)**: ≤ 24h for general data; ≤ 1h for Postgres via WAL.
-- **RTO (restore time)**: ≤ 4h for read-only retrieval; ≤ 8h full service (including reranker/LLM).
-- **SLOs (best-effort)**: P95 query latency < 1.5s; P99 < 3s under normal load.
-
-Operational hygiene
-- Runbooks: printable step-by-step for backup/restore and “host down” scenarios.
-- Fire drills: quarterly simulate loss of a service and a host; record actual RPO/RTO.
-- Observability: per-step latency (embed → retrieve → rerank → generate), error rates, and queue depths on dashboards.
-
-Limitations (explicit)
-- No multi-node HA; a host failure is a downtime event.
-- No cross-region DR; off-site copies mitigate loss, not instant failover.
+- **Kubernetes self-healing**: liveness/readiness probes, rolling updates, pod restarts. (work-in-progress)  
+- **Immutable infra**: full rebuild via IaC (Terraform/Ansible/K8s manifests). (work-in-progress) 
+- **Backups**: PostgreSQL, Qdrant, and MinIO replicated off-box with regular restore tests.  
+- **Cold standby**: documented procedure to recover a new node from snapshots.  
+- **Degraded modes**: fallbacks if reranker, embedding, or LLM services are offline. (work-in-progress)  
 
