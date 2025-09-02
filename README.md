@@ -35,7 +35,7 @@ Upcoming phases will build on this base with re-ranking, SharePoint ACL integrat
 I am working on two parallel tracks:  
 - **Application Layer**: user-facing features and AI components  
 - **Infrastructure Layer**: systems engineering, deployment, and reliability
-- 
+  
 | Quarter | Application Layer (AI / Features)                                     | Infrastructure Layer (Systems / Ops)              |
 |---------|-----------------------------------------------------------------------|---------------------------------------------------|
 | Q4 2025 | Re-ranking microservice (PyTorch cross-encoder)                       | Stabilisation + Kubernetes/Terraform refactor     |
