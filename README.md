@@ -14,7 +14,8 @@ When a question is asked, it too is converted into embeddings. The system matche
 2. Deep dive into RAG and AI: Explore the architecture, components, best practices, and evaluation of retrieval-augmented generation systems.
 3. User experience and prompt engineering: Design intuitive interfaces and effective, measurable prompts.
 4. Tuning and re-ranking: Train and evaluate lightweight ML models (e.g. cross-encoders, rerankers) to improve retrieval quality and prepare for GPU-accelerated fine-tuning.
-5. Practical research assistant: Maintain a weekly-updated repository of the latest AI research, enriched through the RAG pipeline and queried via LLMs.
+5. Security and governance as first-class citizens: Operate a dedicated security VM (`lab-1-security01`) to centralise services such as threat modelling, pentesting, PII redaction, audit logging, and compliance tooling.
+6. Practical research assistant: Maintain a weekly-updated repository of the latest AI research, enriched through the RAG pipeline and queried via LLMs.
 
 The lab ingests AI research papers from SharePoint, OpenAlex, and other sources. It extracts metadata and ACLs, and generates vector embeddings for retrieval-augmented reasoning. Each week new papers are added.
 ## Current Status: 31 August 2025  
@@ -38,11 +39,13 @@ I am working on two parallel tracks:
 | Quarter | Application Layer (AI / Features) | Infrastructure Layer (Systems / Ops) |
 |---------|------------------------------------|---------------------------------------|
 | Q4 2025 | Re-ranking microservice (PyTorch cross-encoder) | Stabilisation + Kubernetes/Terraform refactor |
-| Q1 2026 | SharePoint ACL enforcement (event-driven, Graph API) | CI/CD hardening + experiment tracking |
-| Q2 2026 | Metrics dashboards + golden set | RAG-specific observability + drift/shadow deploys |
+| Q1 2026 | SharePoint ACL enforcement (event-driven, Graph API) Security services (threat modelling, PII redaction, audit logging) |
+| Q2 2026 | Metrics dashboards + golden set | CI/CD hardening + experiment tracking |
 | Q3 2026 | Domain LLM fine-tuning (LoRA/adapters) | Artefact versioning + lineage tracking |
-| Q4 2026 | UI & prompt libraries (with citations) | Cost optimisation (hybrid infra) |
+| Q4 2026 | UI & prompt libraries (with citations) | RAG-specific observability + drift/shadow deploys |
 
+## Security & Governance
+Although this project runs in a homelab, security is not an afterthought. It is treated as a first-class concern, with a dedicated security VM (`lab-1-security01`) that centralises services such as threat modelling, pentesting experiments, PII redaction, and audit logging.  
 
 ## Current ingestion and embedding status
 - PDFs in MinIO object storage: 112660  
