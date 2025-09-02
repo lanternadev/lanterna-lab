@@ -89,11 +89,13 @@ The lab now spans 11 dedicated VMs, each mapped 1:1 to a functional stage of the
 Hosted on a Minisforum UM890 Pro running Proxmox  
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
-- 2 TB NVMe
-This is supplimented by GPU services on AWS EC2. 
+- 2 TB NVMe  
+
+This is supplemented by:  
+- **AWS EC2 GPU instances** for embeddings and reranking.  
+- **OpenAI APIs (ChatGPT)** for response generation.  
 
 The lab operates in three modes — general usage, embedding, and fine-tuning — to optimise use of limited local hardware resources.
-
 ## CI/CD overview
 
 A branch-based promotion pipeline is in place with two environments per service, orchestrated by GitHub Actions.
