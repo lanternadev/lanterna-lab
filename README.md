@@ -82,8 +82,8 @@ The lab now spans 12 dedicated VMs, each mapped 1:1 to a functional stage of the
 | lab-1-monitoring01   | Monitoring  | Monitoring & Logging (Prometheus, Grafana, etc.) |
 | lab-1-tuning01       | Tuning      | Experimental VM for training/fine-tuning |
 | lab-1-reranker01     | Reranker    | PyTorch-based re-ranking microservice |
-| lab-1-security01     | Security    | Security services: threat modelling, audit logging, etc. |
-| lab-1-win01      | Windows     | Windows 11 VM for developing and testing the Azure/SharePoint ACL integration app |
+| lab-1-security01     | Security    | Lab security services: threat modelling, audit logging, etc. |
+| lab-1-win01      | Integration     | Windows 11 VM for developing and testing the Azure/SharePoint ACL integration app |
 
 ## RAG lab infrastructure
 
