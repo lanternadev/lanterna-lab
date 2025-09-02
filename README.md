@@ -31,7 +31,7 @@ Upcoming phases will build on this base with re-ranking, SharePoint ACL integrat
 
 ## Roadmap 2025–2026
 
-The RAG lab is evolving along two parallel tracks:  
+I am working on two parallel tracks:  
 - **Application Layer**: user-facing features and AI components  
 - **Infrastructure Layer**: systems engineering, deployment, and reliability  
 
@@ -65,20 +65,21 @@ This **1:1 mapping** enforces clear separation of concerns and makes it easy to 
 
 | Repo Folder | VM Name            | Description                                                                 |
 |-------------|--------------------|-----------------------------------------------------------------------------|
-| Management | lab-1-mgmt01       | Management & orchestration (Terraform, Ansible, backups)                    |
+| Management  | lab-1-mgmt01       | Management & orchestration (Terraform, Ansible, backups)                    |
 | Database    | lab-1-db01         | Metadata (PostgreSQL) + Vector DB (Qdrant)                                  |
-| Embed         | lab-1-embed01      | Embedding Service (currently: nomic-embed-text-v1)                          |
-| Ingestion  | lab-1-ingestion01  | Data ingestion (SharePoint + OpenAlex pipelines)                            |
-| UI               | lab-1-ui01         | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)                 |
-| Retrieval  | lab-1-retrieval01  | FastAPI retrieval microservice + LangChain orchestration                    |
+| Embed       | lab-1-embed01      | Embedding Service (currently: nomic-embed-text-v1)                          |
+| Ingestion   | lab-1-ingestion01  | Data ingestion (SharePoint + OpenAlex pipelines)                            |
+| UI          | lab-1-ui01         | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)                 |
+| Retrieval   | lab-1-retrieval01  | FastAPI retrieval microservice + LangChain orchestration                    |
 | Storage     | lab-1-storage01    | Object storage (MinIO)                                                      |
-| Monitoring | lab-1-monitoring01 | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
-| Tuning    | lab-1-tuning01    | Experimental VM for training and fine-tuning models, evaluation workflows, and ML prototyping |
-| Reranker  | lab-1-reranker01  | PyTorch-based re-ranking model. Dedicated microservice for re-ranking retrieved results using cross-encoder models (e.g., DistilBERT, monoT5) to improve answer relevance. |
+| Monitoring  | lab-1-monitoring01 | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
+| Tuning      | lab-1-tuning01     | Experimental VM for training and fine-tuning models, evaluation workflows, and ML prototyping |
+| Reranker    | lab-1-reranker01   | PyTorch-based re-ranking model. Dedicated microservice for re-ranking retrieved results using cross-encoder models (e.g., DistilBERT, monoT5) to improve answer relevance. |
+| Security    | lab-1-security01   | Centralised security services: threat modelling, pentesting, PII redaction, audit logging, and compliance tooling. |
 
 ## RAG lab infrastructure
 
-Hosted on a Minisforum UM890 Pro running Proxmox  
+Hosted on a very hardworking Minisforum UM890 Pro running Proxmox  
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
 - 2 TB NVMe
