@@ -68,7 +68,8 @@ Each functional stage of the pipeline has:
 - a **folder** in the repository (code & configs)  
 - a **dedicated VM** (runtime environment)  
 
-The lab now spans 12 dedicated VMs, each mapped 1:1 to a functional stage of the system. This separation enforces clear boundaries, makes experimentation safer, and mirrors enterprise design patterns.
+The lab now spans 12 dedicated VMs — 11 Ubuntu and one Windows 11 — each mapped 1:1 to a functional stage of the system.  
+This separation enforces clear boundaries, supports safer experimentation, and mirrors enterprise design patterns.
 
 | VM Name              | Repo Folder | Description |
 |----------------------|-------------|-------------|
