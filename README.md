@@ -45,7 +45,12 @@ I am working on two parallel tracks:
 | Q4 2026 | UI & prompt libraries (with citations)                                | RAG-specific observability + drift/shadow deploys |
 
 ## Security & Governance
+
 Although this project runs in a homelab, security is not an afterthought. It is treated as a first-class concern, with a dedicated security VM (`lab-1-security01`) that centralises services such as threat modelling, pentesting experiments, PII redaction, and audit logging.  
+
+If a wrongly-secured document enters the system, the design must allow:  
+- **Complete remediation**: rapid removal from all layers — blob storage, metadata database, and vector index.  
+- **Exposure tracking**: identification and logging of all access (which users, which queries, which results) to provide an auditable record of any exposure window.
 
 ## Current ingestion and embedding status
 - PDFs in MinIO object storage: 112660  
