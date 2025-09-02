@@ -92,8 +92,8 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 - 2 TB NVMe  
 
 This is supplemented by:  
-- **AWS EC2 GPU instances** for embeddings and reranking.  
-- **OpenAI APIs (ChatGPT)** for response generation.  
+- AWS EC2 GPU instances for embeddings and reranking.  
+- OpenAI APIs (ChatGPT) for response generation.  
 
 The lab operates in three modes — general usage, embedding, and fine-tuning — to optimise use of limited local hardware resources.
 ## CI/CD overview
