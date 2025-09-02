@@ -70,21 +70,19 @@ Each functional stage of the pipeline has:
 
 The lab now spans 11 dedicated VMs, each mapped 1:1 to a functional stage of the system. This separation enforces clear boundaries, makes experimentation safer, and mirrors enterprise design patterns.
 
-| Repo Folder | VM Name            | Description                                                                 |
-|-------------|--------------------|-----------------------------------------------------------------------------|
-| Management  | lab-1-mgmt01       | Management & orchestration (Terraform, Ansible, backups)                    |
-| Database    | lab-1-db01         | Metadata (PostgreSQL) + Vector DB (Qdrant)                                  |
-| Embed       | lab-1-embed01      | Embedding Service (currently: nomic-embed-text-v1)                          |
-| Ingestion   | lab-1-ingestion01  | Data ingestion (SharePoint + OpenAlex pipelines)                            |
-| UI          | lab-1-ui01         | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)                 |
-| Retrieval   | lab-1-retrieval01  | FastAPI retrieval microservice + LangChain orchestration                    |
-| Storage     | lab-1-storage01    | Object storage (MinIO)                                                      |
-| Monitoring  | lab-1-monitoring01 | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
-| Tuning      | lab-1-tuning01     | Experimental VM for training and fine-tuning models, evaluation workflows, and ML prototyping |
-| Reranker    | lab-1-reranker01   | PyTorch-based re-ranking model. Dedicated microservice for re-ranking retrieved results using cross-encoder models (e.g., DistilBERT, monoT5) to improve answer relevance. |
-| Security    | lab-1-security01   | Centralised security services: threat modelling, pentesting, PII redaction, audit logging, and compliance tooling. |
-
-Let's see it. 
+| VM Name            | Repo Folder | Description                                                                 |
+|--------------------|-------------|-----------------------------------------------------------------------------|
+| lab-1-mgmt01       | Management  | Management & orchestration (Terraform, Ansible, backups)                    |
+| lab-1-db01         | Database    | Metadata (PostgreSQL) + Vector DB (Qdrant)                                  |
+| lab-1-embed01      | Embed       | Embedding Service (currently: nomic-embed-text-v1)                          |
+| lab-1-ingestion01  | Ingestion   | Data ingestion (SharePoint + OpenAlex pipelines)                            |
+| lab-1-ui01         | UI          | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)                 |
+| lab-1-retrieval01  | Retrieval   | FastAPI retrieval microservice + LangChain orchestration                    |
+| lab-1-storage01    | Storage     | Object storage (MinIO)                                                      |
+| lab-1-monitoring01 | Monitoring  | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
+| lab-1-tuning01     | Tuning      | Experimental VM for training and fine-tuning models, evaluation workflows, and ML prototyping |
+| lab-1-reranker01   | Reranker    | PyTorch-based re-ranking model. Dedicated microservice for re-ranking retrieved results using cross-encoder models (e.g., DistilBERT, monoT5) to improve answer relevance. |
+| lab-1-security01   | Security    | Centralised security services: threat modelling, pentesting, PII redaction, audit logging, and compliance tooling. |
 
 ## RAG lab infrastructure
 
