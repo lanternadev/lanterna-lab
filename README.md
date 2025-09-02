@@ -52,14 +52,6 @@ If a wrongly-secured document enters the system, the design must allow:
 - **Complete remediation**: rapid removal from all layers — blob storage, metadata database, and vector index.  
 - **Exposure tracking**: identification and logging of all access (which users, which queries, which results and when) to provide an auditable record of any exposure window.
 
-### Example audit log (exposure tracking)
-
-| Timestamp           | User ID   | Query                          | Retrieved Docs (IDs / Titles)      |
-|---------------------|-----------|--------------------------------|------------------------------------|
-| 2026-01-12 10:42:15 | alice@org | "salary bands 2025"            | DOC-4421 (*HR_Payroll_Confidential.pdf*) |
-| 2026-01-12 10:45:02 | bob@org   | "pay grades Europe"            | DOC-4421 (*HR_Payroll_Confidential.pdf*), DOC-1893 (*Staff Handbook.pdf*) |
-| 2026-01-12 11:03:27 | alice@org | "holiday policy"               | DOC-1893 (*Staff Handbook.pdf*)    |
-
 ## Current ingestion and embedding status
 - PDFs in MinIO object storage: 112660  
 - JSON metadata in PostgreSQL: 112660  
