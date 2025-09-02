@@ -90,8 +90,9 @@ Hosted on a Minisforum UM890 Pro running Proxmox
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
 - 2 TB NVMe
+This is supplimented by GPU services on AWS EC2. 
 
-The lab operates in three modes — general usage, embedding, and fine-tuning — to optimise use of limited hardware resources.
+The lab operates in three modes — general usage, embedding, and fine-tuning — to optimise use of limited local hardware resources.
 
 ## CI/CD overview
 
