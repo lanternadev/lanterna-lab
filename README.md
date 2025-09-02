@@ -87,7 +87,7 @@ This **1:1 mapping** enforces clear separation of concerns and makes it easy to 
 
 ## RAG lab infrastructure
 
-Hosted on a very hardworking Minisforum UM890 Pro running Proxmox  
+Hosted on a Minisforum UM890 Pro running Proxmox  
 - Ryzen 9 8945HS  
 - 64 GB DDR5 RAM  
 - 2 TB NVMe
@@ -176,7 +176,7 @@ Continuity strategy (practical, on this hardware)
   - If embeddings are down → serve from cache; queue new queries for later embed.
   - If LLM is unreachable → return retrieved citations with “no synthesis” banner.
 
-Targets (honest, lab-scale)
+Targets (lab-scale)
 - **RPO (data loss window)**: ≤ 24h for general data; ≤ 1h for Postgres via WAL.
 - **RTO (restore time)**: ≤ 4h for read-only retrieval; ≤ 8h full service (including reranker/LLM).
 - **SLOs (best-effort)**: P95 query latency < 1.5s; P99 < 3s under normal load.
