@@ -29,19 +29,19 @@ Upcoming phases will build on this base with re-ranking, SharePoint ACL integrat
 **Next up:** bring reranker01 online (PyTorch + cross-encoder) to improve result ordering and lay the groundwork for fine-tuning.  
 
 
-## Project timeline (2025–2027)
+## Roadmap 2025–2026
 
-| Dates           | Project                          | Notes                                                                 |
-|-----------------|----------------------------------|-----------------------------------------------------------------------|
-| Jun – Aug 2025  | Core RAG build                   | Ingestion, storage, retrieval; query LLM in cloud; ~100k docs; basic CLI |
-| Sept – Nov 2025 | Re-ranking microservice      | Build reranker01 VM; implement cross-encoder reranker (DistilBERT and/or monoT5); integrate into retrieval pipeline |
-| Dec 2025 – Jan 2026 | SharePoint security integration | Event-driven sync of ACLs; enforce permissions across Postgres/Qdrant |
-| Feb – Apr 2026  | Kubernetes/Terraform/Ansible     | Containerise and refactor into IaC deployment |
-| May – Jul 2026  | Metrics and golden set           | Golden dataset for retrieval + reranker; build evaluation dashboards |
-| Aug – Oct 2026  | Domain LLM                       | Fine-tune on AI/ML corpora; adapters and workflows |
-| Nov 2026 – Jan 2027 | Prompt engineering and UX        | Layer in advanced user flows, prompt libraries, and UI improvements |
-| Feb – Jun 2027  | Cloud migration                  | Hybrid to cloud-native migration; metric parity maintained |
-| Jul – Dec 2027  | Cloud: land and expand           | Scale out with cloud services, optimisation, managed workloads        |
+The RAG lab is evolving along two parallel tracks:  
+- **Application Layer**: user-facing features and AI components  
+- **Infrastructure Layer**: systems engineering, deployment, and reliability  
+
+| Quarter | Application Layer (AI / Features) | Infrastructure Layer (Systems / Ops) |
+|---------|------------------------------------|---------------------------------------|
+| Q4 2025 | Re-ranking microservice (PyTorch cross-encoder) | Stabilisation + Kubernetes/Terraform refactor |
+| Q1 2026 | SharePoint ACL enforcement (event-driven, Graph API) | CI/CD hardening + experiment tracking |
+| Q2 2026 | Metrics dashboards + golden set | RAG-specific observability + drift/shadow deploys |
+| Q3 2026 | Domain LLM fine-tuning (LoRA/adapters) | Artefact versioning + lineage tracking |
+| Q4 2026 | UI & prompt libraries (with citations) | Cost optimisation (hybrid infra) |
 
 
 ## Current ingestion and embedding status
@@ -165,11 +165,3 @@ Example commands:
 - rag ingest  
 - rag dedupe  
 - rag status  
-
-## Future exploratory areas
-
-- Data lineage tracking  
-- Federated learning  
-- Homomorphic encryption  
-- Advanced retrieval benchmarks  
-- Drift detection  
