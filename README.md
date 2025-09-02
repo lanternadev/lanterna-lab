@@ -103,7 +103,7 @@ A branch-based promotion pipeline is in place with two environments per service,
 
 Endpoints expose /health and /version for post-deploy checks.
 
-## SharePoint Online security integration (Dec 2025 – Jan 2026)
+## SharePoint Online security integration (Q1 2026)
 
 Goal: propagate SharePoint permission changes to search results within ~5 seconds, end-to-end. The system must enforce access at every layer (API, vector search, and object storage) without adding noticeable latency.
 
