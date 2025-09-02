@@ -79,7 +79,7 @@ The lab now spans 11 dedicated VMs, each mapped 1:1 to a functional stage of the
 | lab-1-ui01         | UI          | UI layer (Prototyping: Streamlit; Prod: React + TypeScript)                 |
 | lab-1-retrieval01  | Retrieval   | FastAPI retrieval microservice + LangChain orchestration                    |
 | lab-1-storage01    | Storage     | Object storage (MinIO)                                                      |
-| lab-1-monitoring01 | Monitoring  | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
+| lab-1-monitoring01    | Monitoring  | Monitoring & Logging (Prometheus, Grafana, Alertmanager, Filebeat → Elasticsearch) |
 | lab-1-tuning01     | Tuning      | Experimental VM for training and fine-tuning models, evaluation workflows, and ML prototyping |
 | lab-1-reranker01   | Reranker    | PyTorch-based re-ranking model. Dedicated microservice for re-ranking retrieved results using cross-encoder models (e.g., DistilBERT, monoT5) to improve answer relevance. |
 | lab-1-security01   | Security    | Centralised security services: threat modelling, pentesting, PII redaction, audit logging, and compliance tooling. |
