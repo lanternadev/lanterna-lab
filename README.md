@@ -34,15 +34,15 @@ Upcoming phases will build on this base with re-ranking, SharePoint ACL integrat
 
 I am working on two parallel tracks:  
 - **Application Layer**: user-facing features and AI components  
-- **Infrastructure Layer**: systems engineering, deployment, and reliability  
-
-| Quarter | Application Layer (AI / Features) | Infrastructure Layer (Systems / Ops) |
-|---------|------------------------------------|---------------------------------------|
-| Q4 2025 | Re-ranking microservice (PyTorch cross-encoder) | Stabilisation + Kubernetes/Terraform refactor |
-| Q1 2026 | SharePoint ACL enforcement (event-driven, Graph API) Security services (threat modelling, PII redaction, audit logging) |
-| Q2 2026 | Metrics dashboards + golden set | CI/CD hardening + experiment tracking |
-| Q3 2026 | Domain LLM fine-tuning (LoRA/adapters) | Artefact versioning + lineage tracking |
-| Q4 2026 | UI & prompt libraries (with citations) | RAG-specific observability + drift/shadow deploys |
+- **Infrastructure Layer**: systems engineering, deployment, and reliability
+- 
+| Quarter | Application Layer (AI / Features)                                     | Infrastructure Layer (Systems / Ops)              |
+|---------|-----------------------------------------------------------------------|---------------------------------------------------|
+| Q4 2025 | Re-ranking microservice (PyTorch cross-encoder)                       | Stabilisation + Kubernetes/Terraform refactor     |
+| Q1 2026 | SharePoint ACL enforcement (event-driven, Graph API)|Security services (threat modelling, PII redaction, audit logging) |
+| Q2 2026 | Metrics dashboards + golden set                                       | CI/CD hardening + experiment tracking             |
+| Q3 2026 | Domain LLM fine-tuning (LoRA/adapters)                                | Artefact versioning + lineage tracking            |
+| Q4 2026 | UI & prompt libraries (with citations)                                | RAG-specific observability + drift/shadow deploys |
 
 ## Security & Governance
 Although this project runs in a homelab, security is not an afterthought. It is treated as a first-class concern, with a dedicated security VM (`lab-1-security01`) that centralises services such as threat modelling, pentesting experiments, PII redaction, and audit logging.  
