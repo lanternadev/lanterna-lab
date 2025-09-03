@@ -23,7 +23,7 @@ When a question is asked, it too is converted into embeddings. The system matche
 - Ingestion, storage, and retrieval services fully wired together with a basic UI
 
 ### Milestone closed
-Two-month sprint focused on building the **core system**: plumbing, pipelines, and reliability.
+Two-month sprint focused on building the core system: plumbing, pipelines, and reliability.
 
 ### What’s next
 - **3 Sept 2025**: stand up Kubernetes infrastructure with Terraform + Ansible  
