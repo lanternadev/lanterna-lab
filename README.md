@@ -26,7 +26,7 @@ This milestone closes a two-month sprint focused on plumbing and reliability: in
 
 Upcoming phases will build on this base with Kubernetes, re-ranking, SharePoint ACL integration, and evaluation dashboards.
 
-Next up (Sept 3, 2025): Standing up the Kubernetes infrastructure with Terraform and Ansible (k3s control plane + first worker node). This cluster will become the target for gradually migrating the existing RAG services into containers over the coming weeks.
+Next up (Sept 3, 2025): Standing up the Kubernetes infrastructure with Terraform and Ansible (k3s control plane + first worker node). This cluster will become the target for gradually migrating the existing RAG services into containers over the coming weeks. 
 
 
 ## Roadmap 2025–2026
@@ -150,4 +150,10 @@ This lab runs on limited hardware; there is no hot failover. The design focuses 
 - **Backups**: PostgreSQL, Qdrant, and MinIO replicated off-box with regular restore tests.  
 - **Cold standby**: documented procedure to recover a new node from snapshots.  
 - **Degraded modes**: fallbacks if reranker, embedding, or LLM services are offline. (work-in-progress)  
+
+## Documentation
+
+Additional background and design notes will live in the [`documentation/`](documentation) folder:
+
+- [DNS Setup](documentation/dns-setup.md)
 
