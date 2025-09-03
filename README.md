@@ -10,15 +10,12 @@ Retrieval-Augmented Generation (RAG) systems ground a large language model's res
 When a question is asked, it too is converted into embeddings. The system matches these embeddings against the stored research and provides the results to the language model. The model then uses the retrieved content, along with style and instruction prompts, to generate a natural-language answer that stays grounded in the source material.
 
 ## Project goals
-1. Hands-on learning: Build a non-trivial Linux software project, gaining practical experience with Python, PyTorch, Bash, GitHub, monitoring, and related tooling. 
+1. Hands-on learning: Build a non-trivial Linux software project, gaining practical experience with Python, PyTorch, Bash, GitHub, monitoring, Kubernetes and related tooling. 
 2. Deep dive into RAG and AI: Explore the architecture, components, best practices, and evaluation of retrieval-augmented generation systems.
 3. User experience and prompt engineering: Design intuitive interfaces and effective, measurable prompts.
 4. Tuning and re-ranking: Train and evaluate lightweight ML models (e.g. cross-encoders, rerankers) to improve retrieval quality and prepare for GPU-accelerated fine-tuning.
-5. Security and governance as first-class citizens: Operate a dedicated security VM (`lab-1-security01`) to centralise services such as threat modelling, pentesting, PII redaction, audit logging, and compliance tooling.
-6. Practical research assistant: Maintain a weekly-updated repository of the latest AI research, enriched through the RAG pipeline and queried via LLMs.
 
 ## Current Status: 31 August 2025  
-
 **Version 0.1**  
 The core system is up and running. It is currently embedding 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant, with ingestion, storage, and retrieval services fully wired together.  
 
