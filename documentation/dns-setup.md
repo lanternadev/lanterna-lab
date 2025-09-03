@@ -1,4 +1,4 @@
-# Homelab DNS Setup
+# Lanterna Homelab DNS Setup
 
 This document describes the DNS design for the `lanterna-lab` environment.
 
