@@ -51,17 +51,6 @@ If a wrongly-secured document enters the system, the design must allow:
 - **Complete remediation**: rapid removal from all layers — blob storage, metadata database, and vector index.  
 - **Exposure tracking**: identification and logging of all access (which users, which queries, which results and when) to provide an auditable record of any exposure window.
 
-## Current ingestion and embedding status
-- PDFs in MinIO object storage: 112660  
-- JSON metadata in PostgreSQL: 112660  
-- Distinct chunked papers: 112660  
-- Papers with any chunk embedded: 41170  
-- Fully embedded papers (ALL chunks): 41170
-- Any-embed progress: 41170/112660 (36.54%) — Remaining (any): 71490
-- Full-embed progress: 41170/112660 (36.54%) — Remaining (full): 71490
-  
-  30 August 2025 15:38:21
-
 ## Project Structure  
 
 Each functional stage of the pipeline has:  
