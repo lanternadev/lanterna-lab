@@ -31,7 +31,7 @@ Two-month sprint focused on building the core system: plumbing, pipelines, and r
 - Begin gradual migration of RAG services into containers
 - Design multi-corpus architecture:  
   - Maintain AI corpus as the primary index  
-  - Plan parallel **Classics corpus** (Ancient Greek history, philosophy, literature) with separate ingestion, embeddings, and endpoints  
+  - Plan parallel Classics corpus (Ancient Greek history, philosophy, literature) with separate ingestion, embeddings, and endpoints  
   - Establish governance and monitoring to keep corpora independent but extensible
 
 ### On the horizon
