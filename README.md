@@ -26,7 +26,7 @@ This milestone closes a two-month sprint focused on plumbing and reliability: in
 
 Upcoming phases will build on this base with Kubernetes, re-ranking, SharePoint ACL integration, and evaluation dashboards.
 
-**Next up** (Sept 3, 2025): Standing up the Kubernetes infrastructure with Terraform and Ansible (k3s control plane + first worker node). This cluster will become the target for gradually migrating VM-based services into containers over the coming weeks.
+Next up (Sept 3, 2025): Standing up the Kubernetes infrastructure with Terraform and Ansible (k3s control plane + first worker node). This cluster will become the target for gradually migrating the existing RAG services into containers over the coming weeks.
 
 
 ## Roadmap 2025–2026
