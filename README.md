@@ -24,9 +24,9 @@ The core system is up and running. It is currently embedding 112,660 AI research
 
 This milestone closes a two-month sprint focused on plumbing and reliability: ingestion pipelines, CI/CD, monitoring, and a first working UI.  
 
-Upcoming phases will build on this base with re-ranking, SharePoint ACL integration, and evaluation dashboards.
+Upcoming phases will build on this base with Kubernetes, re-ranking, SharePoint ACL integration, and evaluation dashboards.
 
-**Next up:** bring reranker01 online (PyTorch + cross-encoder) to improve result ordering and lay the groundwork for fine-tuning.  
+**Next up** (Sept 3, 2025): Standing up the Kubernetes infrastructure with Terraform and Ansible (k3s control plane + first worker node). This cluster will become the target for gradually migrating VM-based services into containers.
 
 
 ## Roadmap 2025–2026
