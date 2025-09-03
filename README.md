@@ -26,9 +26,13 @@ When a question is asked, it too is converted into embeddings. The system matche
 Two-month sprint focused on building the core system: plumbing, pipelines, and reliability.
 
 ### What’s next
-- **3 Sept 2025**: stand up Kubernetes infrastructure with Terraform + Ansible  
+- Kubernetes infrastructure with Terraform + Ansible  
 - Deploy k3s control plane + first worker node  
-- Begin gradual migration of RAG services into containers  
+- Begin gradual migration of RAG services into containers
+- Design multi-corpus architecture:  
+  - Maintain AI corpus as the primary index  
+  - Plan parallel **Classics corpus** (Ancient Greek history, philosophy, literature) with separate ingestion, embeddings, and endpoints  
+  - Establish governance and monitoring to keep corpora independent but extensible
 
 ### On the horizon
 Re-ranking, SharePoint ACL integration, evaluation dashboards
