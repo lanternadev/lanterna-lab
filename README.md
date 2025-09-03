@@ -34,8 +34,6 @@ Two-month sprint focused on building the core system: plumbing, pipelines, and r
   - Plan parallel Classics corpus (Ancient Greek history, philosophy, literature) with separate ingestion, embeddings, and endpoints  
   - Establish governance and monitoring to keep corpora independent but extensible
 
-### On the horizon
-Re-ranking, SharePoint ACL integration, evaluation dashboards
 
 
 ## Roadmap 2025–2026
