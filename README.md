@@ -16,14 +16,22 @@ When a question is asked, it too is converted into embeddings. The system matche
 4. Tuning and re-ranking: Train and evaluate lightweight ML models (e.g. cross-encoders, rerankers) to improve retrieval quality and prepare for GPU-accelerated fine-tuning.
 
 ## Current Status: 31 August 2025  
-**Version 0.1**  
-The core system is up and running. It is currently embedding 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant, with ingestion, storage, and retrieval services fully wired together.  
+**Version 0.1**
 
-This milestone closes a two-month sprint focused on plumbing and reliability: ingestion pipelines, CI/CD, monitoring, and a first working UI.  
+### What’s live
+- Embedding 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant  
+- Ingestion, storage, and retrieval services fully wired together with a basic UI
 
-Upcoming phases will build on this base with Kubernetes, re-ranking, SharePoint ACL integration, and evaluation dashboards.
+### Milestone closed
+Two-month sprint focused on building the **core system**: plumbing, pipelines, and reliability.
 
-Next up (Sept 3, 2025): Standing up the Kubernetes infrastructure with Terraform and Ansible (k3s control plane + first worker node). This cluster will become the target for gradually migrating the existing RAG services into containers over the coming weeks. 
+### What’s next
+- **3 Sept 2025**: stand up Kubernetes infrastructure with Terraform + Ansible  
+- Deploy k3s control plane + first worker node  
+- Begin gradual migration of RAG services into containers  
+
+### On the horizon
+Re-ranking, SharePoint ACL integration, evaluation dashboards
 
 
 ## Roadmap 2025–2026
