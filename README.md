@@ -46,8 +46,7 @@ I am working on two parallel tracks:
   
 | Quarter | Application Layer (AI / Features)                                     | Infrastructure Layer (Systems / Ops)              |
 |---------|-----------------------------------------------------------------------|---------------------------------------------------|
-| Q4 2025 | ▸ Re-ranking microservice (PyTorch cross-encoder)                     | Stabilisation + Kubernetes/Terraform/Ansible refactor |
-|         | ▸ Implement parallel Classics corpus (Ancient Greek history, philosophy, literature) |                                                   |
+| Q4 2025 | ▸ Re-ranking microservice (PyTorch cross-encoder)</br>▸ Implement parallel Classics corpus                      | Stabilisation + Kubernetes/Terraform/Ansible refactor |
 | Q1 2026 | ▸ SharePoint ACL enforcement (event-driven, Graph API)                | Security services (threat modelling, PII redaction, audit logging) |
 | Q2 2026 | ▸ Metrics dashboards + golden set                                     | CI/CD hardening + experiment tracking             |
 | Q3 2026 | ▸ Domain LLM fine-tuning (LoRA/adapters)                              | Artefact versioning + lineage tracking            |
