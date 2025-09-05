@@ -19,6 +19,6 @@ This document describes the DNS design for the `lanterna-lab` environment.
 - `*.svc.cluster.local` → internal service discovery
 
 ## Next Steps
-1. Stand up Unbound + PowerDNS on `lab-1-mgmt1`.
+1. Run Unbound in a Proxmox LXC container (256 MB RAM, 1 vCPU, 4 GB disk).
 2. Configure DHCP/macOS resolver entries for `*.home.arpa`.
 3. Deploy MetalLB + ExternalDNS in K3s.
