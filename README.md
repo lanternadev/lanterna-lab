@@ -18,23 +18,23 @@ When a question is asked, it too is converted into embeddings. The system matche
 ## Current Status: 31 August 2025  
 **Version 0.1**
 
-### What’s live
-- Embedding 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant  
+### Summer 2025 Sprint closed
+- Embedded 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant  
 - Ingestion, storage, and retrieval services fully wired together with a basic UI
 
-### Milestone closed
-Two-month sprint focused on building the core system: plumbing, pipelines, and reliability.
-
 ### Q4 2025 Sprint
+
 #### 1. Reranking microservice (PyTorch cross-encoder)
 - Build and deploy the reranking service to improve retrieval quality.
+
 #### 2. Kubernetes rebuild with Terraform + Ansible
 - Move the lab from single snowflake servers to enterprise-ready Infrastructure as Code.  
 - Deploy k3s control plane + first worker node.  
-- Begin gradual migration of RAG services into containers.
+- Begin migration of RAG services into containers.
+
 #### 3. Multi-corpus architecture (AI + Classics)
 - Maintain AI corpus as the primary index.  
-- Plan parallel Classics corpus (Ancient Greek history, philosophy, literature) with separate ingestion, embeddings, and endpoints.  
+- Plan parallel Classics corpus (Ancient Greek language, history, philosophy, literature) with separate ingestion, embeddings, and endpoints.  
 - Establish governance and monitoring to keep corpora independent but extensible.
 
 ## Roadmap 2025–2026
