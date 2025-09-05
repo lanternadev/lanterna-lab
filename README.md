@@ -9,11 +9,25 @@ Retrieval-Augmented Generation (RAG) systems ground a large language model's res
 
 When a question is asked, it too is converted into embeddings. The system matches these embeddings against the stored research and provides the results to the language model. The model then uses the retrieved content, along with style and instruction prompts, to generate a natural-language answer that stays grounded in the source material.
 
-## Project goals
-1. Hands-on learning: Build a non-trivial Linux software project, gaining practical experience with Python, PyTorch, Bash, GitHub, monitoring, Kubernetes and related tooling. 
-2. Deep dive into RAG and AI: Explore the architecture, components, best practices, and evaluation of retrieval-augmented generation systems.
-3. User experience and prompt engineering: Design intuitive interfaces and effective, measurable prompts.
-4. Tuning and re-ranking: Train and evaluate lightweight ML models (e.g. cross-encoders, rerankers) to improve retrieval quality and prepare for GPU-accelerated fine-tuning.
+## Project Goals
+
+1. **Core technical fluency**  
+   Build confidence with the foundations: Linux administration, Bash scripting, Python development, Git/GitHub workflows, and container-based deployments.
+
+2. **MLOps experience**  
+   Design and operate CI/CD pipelines for machine learning (GitHub Actions), including model training, versioning, deployment, monitoring, and governance.
+
+3. **Retrieval-Augmented Generation (RAG) deep dive**  
+   Explore RAG architecture and best practices, from ingestion and embeddings to re-ranking, evaluation, and corpus governance.
+
+4. **User-facing design**  
+   Develop intuitive interfaces and prompt-engineering patterns that make RAG systems usable, measurable, and grounded in source material.
+
+5. **Model tuning and re-ranking**  
+   Train and evaluate lightweight ML models (cross-encoders, rerankers) to improve retrieval quality and lay the foundation for GPU-accelerated fine-tuning.
+
+6. **Enterprise-scale system design**  
+   Build and manage a multi-service AI environment: Kubernetes orchestration with Terraform/Ansible, CI/CD automation, monitoring/observability, and integration with external systems (e.g. Azure/SharePoint).
 
 ## Current Status: 31 August 2025  
 **Version 0.1**
