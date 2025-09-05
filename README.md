@@ -40,13 +40,13 @@ I now have a working system. It's not enterprise-ready, embedding is painfully s
 
 ### Q4 2025 Sprint
 
-#### 1. Reranking microservice (PyTorch cross-encoder)
-- Build and deploy the reranking service to improve retrieval quality.
-
-#### 2. Kubernetes rebuild with Terraform + Ansible
+#### 1. Kubernetes rebuild with Terraform + Ansible
 - Move the lab from single snowflake servers to enterprise-ready Infrastructure as Code.  
 - Deploy k3s control plane + first worker node.  
-- Begin migration of RAG services into containers.
+- Begin migration of RAG services into containers. 
+
+#### 2. Reranking microservice (PyTorch cross-encoder)
+- Build and deploy the reranking service to improve retrieval quality.
 
 #### 3. Multi-corpus architecture (AI + Classics)
 - Maintain AI corpus as the primary index.  
