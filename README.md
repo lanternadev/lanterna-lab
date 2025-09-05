@@ -26,7 +26,7 @@ When a question is asked, it too is converted into embeddings. The system matche
 Two-month sprint focused on building the core system: plumbing, pipelines, and reliability.
 
 ### What’s next
-- Kubernetes infrastructure with Terraform + Ansible  
+- Kubernetes infrastructure with Terraform + Ansible. This moves the lab from single snowflake servers to enterprise-ready Infrastructure as code. 
 - Deploy k3s control plane + first worker node  
 - Begin gradual migration of RAG services into containers
 - Design multi-corpus architecture:  
