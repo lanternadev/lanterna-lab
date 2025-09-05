@@ -15,7 +15,7 @@ When a question is asked, it too is converted into embeddings. The system matche
    Build a non-trivial Linux software project, gaining practical experience with Python, PyTorch, Bash, GitHub, monitoring, Kubernetes and related tooling. 
 
 2. **MLOps experience**  
-   Design and operate CI/CD pipelines for machine learning systems: build and test ML code, package trained models as versioned artefacts, deploy them into serving, and monitor their behaviour in production. 
+   Design and operate CI/CD pipelines for machine learning systems: build and test ML code, package trained models as versioned artefacts, deploy and monitor their behaviour in production. 
    
 4. **Retrieval-Augmented Generation (RAG) deep dive**  
    Explore RAG architecture and best practices, from ingestion and embeddings to re-ranking, evaluation, and corpus governance.
