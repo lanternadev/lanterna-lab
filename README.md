@@ -25,17 +25,17 @@ When a question is asked, it too is converted into embeddings. The system matche
 ### Milestone closed
 Two-month sprint focused on building the core system: plumbing, pipelines, and reliability.
 
-### What’s next
-- Re-ranking microservice (PyTorch cross-encoder)
-- Kubernetes infrastructure with Terraform + Ansible. This moves the lab from single snowflake servers to enterprise-ready Infrastructure as code. 
-- Deploy k3s control plane + first worker node  
-- Begin gradual migration of RAG services into containers
-- Design multi-corpus architecture:  
-  - Maintain AI corpus as the primary index  
-  - Plan parallel Classics corpus (Ancient Greek history, philosophy, literature) with separate ingestion, embeddings, and endpoints  
-  - Establish governance and monitoring to keep corpora independent but extensible
-
-
+### Q4 2025 Sprint
+#### 1. Reranking microservice (PyTorch cross-encoder)
+- Build and deploy the reranking service to improve retrieval quality.
+#### 2. Kubernetes rebuild with Terraform + Ansible
+- Move the lab from single snowflake servers to enterprise-ready Infrastructure as Code.  
+- Deploy k3s control plane + first worker node.  
+- Begin gradual migration of RAG services into containers.
+#### 3. Multi-corpus architecture (AI + Classics)
+- Maintain AI corpus as the primary index.  
+- Plan parallel Classics corpus (Ancient Greek history, philosophy, literature) with separate ingestion, embeddings, and endpoints.  
+- Establish governance and monitoring to keep corpora independent but extensible.
 
 ## Roadmap 2025–2026
 
