@@ -4,7 +4,7 @@ This lab notebook records the history of the RAG homelab project.
 
 | Date / Quarter     | Location | Milestones                                                                 | Status       |
 |--------------------|----------|----------------------------------------------------------------------------|--------------|
-| **25 May 2025**    | Prague   | ▸ Took delivery of the MINISFORUM UM890 Pro Mini PC  <br>  ▸ Q3 Spring planning                           | ✅ Done       |
+| **25 May 2025**    | Prague   | ▸ Took delivery of the MINISFORUM UM890 Pro Mini PC  <br>  ▸ Q3 Sprint planning                           | ✅ Done       |
 | **Q3 2025**        | Riga     | ▸ Provisioned Proxmox hypervisor on Minisforum UM890 Pro <br> ▸ Stood up 8 Ubuntu VMs (db, embed, retrieval, storage, monitoring, etc.) <br> ▸ CI/CD bootstrap: GitHub Actions → staging → prod for ingestion service <br> ▸ Embedded 112,660 AI research papers into PostgreSQL + Qdrant <br> ▸ First working UI (Streamlit) connected to retrieval service <br> ▸ Version 0.1 released | ✅ Done       |
 | **Sept 2025**      | Sofia    | ▸ Planning & preparation for Q4 sprint <br> ▸ Define Kubernetes/Ansible baseline <br> ▸ Reranker design notes | 🔄 In progress |
 | **Q4 2025**        | Sofia    | ▸ Kubernetes rebuild with Terraform + Ansible <br> ▸ Reranking microservice (PyTorch cross-encoder) <br> ▸ Begin work on parallel Classics corpus | ⏳ Planned    |
