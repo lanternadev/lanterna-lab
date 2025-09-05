@@ -67,6 +67,7 @@ I am working on two parallel tracks:
 | Q2 2026 | ▸ Metrics dashboards + golden set                                     | CI/CD hardening + experiment tracking             |
 | Q3 2026 | ▸ Domain LLM fine-tuning (LoRA/adapters)                              | Artefact versioning + lineage tracking            |
 | Q4 2026 | ▸ UI & prompt libraries (with citations)                              | RAG-specific observability + drift/shadow deploys |
+
 (Some items span both layers; listed under primary ownership.)
 ## Security & Governance
 
