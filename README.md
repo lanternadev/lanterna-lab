@@ -26,6 +26,7 @@ When a question is asked, it too is converted into embeddings. The system matche
 Two-month sprint focused on building the core system: plumbing, pipelines, and reliability.
 
 ### What’s next
+- Re-ranking microservice (PyTorch cross-encoder)
 - Kubernetes infrastructure with Terraform + Ansible. This moves the lab from single snowflake servers to enterprise-ready Infrastructure as code. 
 - Deploy k3s control plane + first worker node  
 - Begin gradual migration of RAG services into containers
@@ -49,6 +50,7 @@ I am working on two parallel tracks:
 | Q2 2026 | ▸ Metrics dashboards + golden set                                     | CI/CD hardening + experiment tracking             |
 | Q3 2026 | ▸ Domain LLM fine-tuning (LoRA/adapters)                              | Artefact versioning + lineage tracking            |
 | Q4 2026 | ▸ UI & prompt libraries (with citations)                              | RAG-specific observability + drift/shadow deploys |
+
 ## Security & Governance
 
 Although this project runs in a homelab, security is not an afterthought. It is treated as a first-class concern, with a dedicated security VM (`lab-1-security01`) that centralises services such as threat modelling, pentesting experiments, PII redaction, and audit logging.  
