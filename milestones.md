@@ -1,11 +1,10 @@
 # Project Milestones & Progress Log
 
-This page records the history of the RAG homelab project: completed milestones, sprint outcomes, key design changes, and lessons learned.  
-Think of it as a lab notebook, complementing the main README.
-
----
+This lab notebook records the history of the RAG homelab project: completed milestones, sprint outcomes, key design changes, and lessons learned.  
 
 ## 2025
+### 25 May 2025
+- Took delivery of the MINISFORUM UM890 Pro Mini PC
 
 ### Q2 2025
 - **Initial ingestion pipeline**  
