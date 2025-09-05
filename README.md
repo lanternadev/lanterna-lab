@@ -34,6 +34,7 @@ When a question is asked, it too is converted into embeddings. The system matche
 **Version 0.1**
 
 ### Summer 2025 Sprint closed
+I now have a working system. It's not enterprise-ready, embedding is slow, and there's no fault-tolerance. But it's a foundation and I'm now ready to move to the next spring. 
 - Embedded 112,660 AI research papers from OpenAlex into PostgreSQL + Qdrant  
 - Ingestion, storage, and retrieval services fully wired together with a basic UI
 
