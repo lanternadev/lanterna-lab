@@ -34,7 +34,7 @@ When a question is asked, it too is converted into embeddings. The system matche
 **Version 0.1**
 
 ### Summer 2025 Sprint closed
-- Embedded 112,660 AI research papers from OpenAlex into RAG pipine (PostgreSQL + Qdrant)  
+- Embedded 112,660 AI research papers from OpenAlex into RAG pipeine (PostgreSQL + Qdrant)  
 - Ingestion, storage, and retrieval services fully wired together with a basic UI
 I now have a RAG working system. It's not enterprise-ready, embedding is painfully slow, and there's no fault-tolerace. However, it is a solid foundation and I am ready to move to the next sprint. 
 
