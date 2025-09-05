@@ -12,7 +12,7 @@ When a question is asked, it too is converted into embeddings. The system matche
 ## Project Goals
 
 1. **Core technical fluency**  
-   Build a non-trivial Linux software project, gaining practical experience with Python, PyTorch, Bash, GitHub, monitoring, Kubernetes and related tooling. 
+   Build a non-trivial Linux system, gaining practical experience with Python, PyTorch, Bash, GitHub, monitoring, Kubernetes and related tooling. 
 
 2. **MLOps experience**  
    Design and operate CI/CD pipelines for machine learning systems: build and test ML code, package trained models as versioned artefacts, deploy and monitor their behaviour in production. 
