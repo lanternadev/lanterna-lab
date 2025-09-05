@@ -1,6 +1,6 @@
 # Project Milestones & Progress Log
 
-This lab notebook records the history of the RAG homelab project: completed milestones, sprint outcomes, key design changes, and lessons learned.  
+This lab notebook records the history of the RAG homelab project.  
 
 ## 2025
 ### 25 May 2025 | Location: Prague
