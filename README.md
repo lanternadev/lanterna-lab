@@ -68,7 +68,7 @@ I am working on two parallel tracks:
 | Q3 2026 | ▸ Domain LLM fine-tuning (LoRA/adapters)                              | Artefact versioning + lineage tracking            |
 | Q4 2026 | ▸ UI & prompt libraries (with citations)                              | RAG-specific observability + drift/shadow deploys |
 
-(Some items span both layers; listed under primary ownership.)
+(Project history and plan)[milestones.md]
 ## Security & Governance
 
 Although this project runs in a homelab, security is not an afterthought. It is treated as a first-class concern, with a dedicated security VM (`lab-1-security01`) that centralises services such as threat modelling, pentesting experiments, PII redaction, and audit logging.  
